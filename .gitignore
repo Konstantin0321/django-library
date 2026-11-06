@@ -1,0 +1,19 @@
+# Виртуальное окружение
+.venv/
+venv/
+env/
+
+# База данных
+db.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyCharm
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

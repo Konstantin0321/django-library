@@ -1,0 +1,18 @@
+<!-- catalog/templates/catalog/book_detail.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о книге</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+
+    <p><strong>Автор:</strong> {{ author }}</p>
+    <p><strong>Год издания:</strong> {{ year }}</p>
+    <p><strong>Описание:</strong> {{ description }}</p>
+
+    <!-- Пример использования тега из лекции (слайд 28) -->
+    <a href="{% url 'home' %}">Вернуться на главную</a>
+</body>
+</html>
