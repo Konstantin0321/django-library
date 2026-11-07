@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Фото собак по породам</title>
+</head>
+<body>
+    <h1>Фото собак по породам</h1>
+    <form method="get">
+        <label for="breeds">Введите породы через запятую</label>
+        <input id="breeds" name="breeds" value="{{ query }}" placeholder="african, chow, dingo" required>
+        <button type="submit">Показать фото</button>
+    </form>
+
+    {% for error in errors %}
+        <p role="alert">{{ error }}</p>
+    {% endfor %}
+
+    {% if photos %}
+        <h2>Фотографии</h2>
+        {% for breed, photo in photos %}
+            <figure>
+                <img src="{{ photo }}" alt="Собака породы {{ breed }}" width="300"
+                     style="max-width: 100%; height: auto" loading="lazy">
+                <figcaption>{{ breed }}</figcaption>
+            </figure>
+        {% endfor %}
+    {% endif %}
+
+    {% if breeds %}
+        <h2>Все породы</h2>
+        <ol>
+            {% for breed in breeds %}
+                <li>{{ breed }}</li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+    <a href="{% url 'home' %}">На главную</a>
+</body>
+</html>
